@@ -9,8 +9,10 @@
   "author": "Half",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite-pool": "^0.2.2",
     "discord.js": "^11.4.2",
     "dotenv": "^7.0.0",
+    "enmap": "^4.8.5",
     "express": "^4.16.4"
   }
 }

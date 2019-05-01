@@ -4,6 +4,7 @@ require(`dotenv`).config();
 
 //Calling Packages
 const Discord = require(`discord.js`);
+const Enmap = require(`enmap`);
 // eslint-disable-next-line no-unused-vars
 const express = require(`./express.js`);
 const fs = require(`fs`);
@@ -14,13 +15,24 @@ const client = new Discord.Client({
 });
 //const commands = JSON.parse(fs.readFileSync(`Storage/commands.json`, `utf8`));
 
+//tunneling stuffs through client! Yeah!
 client.fs = fs;
+client.enmap = Enmap;
 
-// 
-// To access this do client.func.[FUNCTIONHERE]
-// 
+//Create an Enmap for our currencies!!1!
+const currency = new Enmap({
+    name: `currency`,
+    autoFetch: true,
+    fetchAll: false
+});
 
-//client.func = func;
+//Tunnel it through client
+client.currency = currency;
+
+//When loading log all keys
+currency.defer.then(() => {
+    console.log(currency.size + ` currency keys loaded`);
+});
 
 fs.readdir(`./events/`, (err, files) => {
     if (err) return console.error(err);
