@@ -1,0 +1,16 @@
+{
+  "name": "ccolors95-bot",
+  "version": "0.0.1",
+  "description": "A bot for CColors!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Half",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4"
+  }
+}

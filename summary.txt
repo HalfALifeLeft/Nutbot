@@ -1,0 +1,5 @@
+Points based system:
+    no points added per message, all manually added
+    assign ranks based on points
+    
+Birthday system
