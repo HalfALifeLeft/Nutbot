@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     var date = Date.UTC(separated[2], separated[0], separated[1]);
     var now = new Date(Date.now());
 
-    message.channel.send(`Is ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]} your birthday?`);
+    message.channel.send(`Set ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]} as your birthday.`);
 
     client.birthday.set(key, `${date}`, `birthdayTS`);
     client.birthday.set(key, `${parseInt(separated[0])}`, `birthdayMonth`);
