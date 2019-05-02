@@ -3,3 +3,9 @@ Points based system:
     assign ranks based on points
     
 Birthday system
+
+Config:
+    add way to config points necessary for roles
+        - same or different enmap? 
+
+Set Up Glitch Hosting!

@@ -19,6 +19,71 @@ const client = new Discord.Client({
 client.fs = fs;
 client.enmap = Enmap;
 
+//Create a birthday enmap :cake:
+const birthday = new Enmap({
+    name: `birthday`,
+    autoFetch: true,
+    fetchAll: false
+});
+
+client.birthday = birthday;
+
+birthday.defer.then(() => {
+    console.log(birthday.size + ` birthday keys loaded`);
+});
+
+//SETINTERVAL
+client.setInterval(function(){
+    console.log(`Interval works!`);
+    client.guilds.forEach((guild) => {
+        console.log(`guild ran`);
+        guild.members.forEach((member) => {
+        console.log(`member ran`);
+
+            var date = new Date(Date.now())
+            const key = member.id;
+
+            if (!birthday.has(member.id)) {
+                return console.log(`returning, no need to waste CPU time`);
+            }
+
+            console.log(`Running to check if birthday!`);
+            if (date.getMonth() == birthday.get(key, `birthdayMonth`)) {
+                if (date.getDate() == birthday.get(key, `birthdayDay`)) {
+
+                    //CODE FOR SENDING BIRTHDAY ANNOUNCEMENT
+
+                }
+            }
+        });
+
+        
+        /*birthday.forEach(() => {
+            console.log(birthday.get(`${guild.id}`, `userID`))
+            let i = 0;
+            i++;
+            console.log(i);
+            console.log(key);
+            console.log(value);
+        });*/ 
+    });
+
+}, 10000)//run every 24 hours (86400000 ms)
+
+//LOOPED EVERY 10 SECONDS, USE THIS IN READY EVENT INSTEAD OF COMMAND, so it runs every time the bot starts up!
+
+
+/*
+
+client.birthday.set(key, `${date}`, `birthdayTS`);
+client.birthday.set(key, `${parseInt(separated[0])}`, `birthdayMonth`);
+client.birthday.set(key, `${separated[1]}`, `birthdayDay`);
+client.birthday.set(key, `${now.getFullYear()}`, `currentYear`);
+client.birthday.set(key, `${message.author.id}`, `userID`);
+
+*/
+
+
 //Create an Enmap for our currencies!!1!
 const currency = new Enmap({
     name: `currency`,
