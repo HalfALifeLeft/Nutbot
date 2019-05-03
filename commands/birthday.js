@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
     });
 
     var birthday = args[0];
-    months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]; //Just an array of the months
-    dateFormat1 = /\b(\d{2}\/\d{2}\/\d{4})\b/g //regex to test for mm/dd/yyyy format
-    separated = [];
+    let months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]; //Just an array of the months
+    let dateFormat1 = /\b(\d{2}\/\d{2}\/\d{4})\b/g //regex to test for mm/dd/yyyy format
+    let separated = [];
 
     if (dateFormat1.test(args[0]) === false) {
         return message.reply(`Please give me your birthday in the mm/dd/yyyy format!`);
@@ -39,4 +39,4 @@ module.exports.run = async (client, message, args) => {
 };
 module.exports.help = {
     name: `birthday`
-}
+};
