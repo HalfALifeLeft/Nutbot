@@ -9,3 +9,5 @@ Config:
         - same or different enmap? 
 
 Set Up Glitch Hosting!
+
+add a way to detect if points decreased, if below threshold (50 - 100 - 150 - 200 - 300) then remove higher role

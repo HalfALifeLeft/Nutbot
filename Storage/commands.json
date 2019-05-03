@@ -1,0 +1,50 @@
+{
+    "Balance": {
+        "name": "Balance",
+        "group": "Users",
+        "desc": "Want to know how many points you have? Use this!",
+        "usage": "balance [@user]"
+    },
+    "Birthday": {
+        "name": "Birthday",
+        "group": "Users",
+        "desc": "Set your birthday to get added to the birthday rotation!",
+        "usage": "birthday [mm/dd/yyyy]"
+    },
+    "Config": {
+        "name": "Config",
+        "group": "Admins",
+        "desc": "Configure the server! `!config help` for more info!",
+        "usage": "config [what to configure] [what to set it to]"
+    },
+    "Give": {
+        "name": "Give",
+        "group": "Admins",
+        "desc": "Give someone points!",
+        "usage": "give <@user> <points>"
+    },
+    "Help": {
+        "name": "Help",
+        "group": "Users",
+        "desc": "Help! Help! I need life alert!",
+        "usage": "help [OPTIONAL: command name]"
+    },
+    "Ping": {
+        "name": "Ping",
+        "group": "Admins",
+        "desc": "Pong!",
+        "usage": "ping"
+    },
+    "Reload": {
+        "name": "Reload",
+        "group": "Owner",
+        "desc": "Reload a command! Only necessary when making file changes to the bot!",
+        "usage": "reload [command name]"
+    },
+    "Roles": {
+        "name": "Roles",
+        "group": "Admins",
+        "desc": "Show all the roles!",
+        "usage": "roles"
+    }
+}

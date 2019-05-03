@@ -1,7 +1,14 @@
 module.exports.run = async (client, message) => {
 
+    let user = `I'm irrelevant!`;
+
+    if (message.mentions.members.size === 0) {
+        user = message.author.id;
+    } else {
+        user = message.mentions.members.first().id;
+    }
     //declare our key
-    const key = `${message.author.id}`;
+    const key = `${user}`;
 
     //Ensure our enmap exists
     client.currency.ensure(key, {
@@ -16,7 +23,7 @@ module.exports.run = async (client, message) => {
     const points = client.currency.get(key, `points`);
 
     //Now lets send a message with the info
-    message.channel.send(`<@!${key}> has ${points} points!`);
+    message.channel.send(`<@!${user}> has ${points} points!`);
 };
 module.exports.help = {
     name: `balance`
