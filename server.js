@@ -31,8 +31,35 @@ birthday.defer.then(() => {
     console.log(birthday.size + ` birthday keys loaded`);
 });
 
+//checks all guilds
+client.guilds.forEach((guild) => {
+    //checks all members in the said guild
+    guild.members.forEach((member) => {
+        var date = new Date(Date.now());
+        const key = member.id;
+
+        //check if the member even has a birthday logged
+        if (!birthday.has(member.id)) {
+            return;
+            //No need to waste CPU time!
+        }
+
+        //check if the birthday month matches today's month
+        if (date.getMonth() == birthday.get(key, `birthdayMonth`)) {
+            //check if the birthday day matches today's day
+            if (date.getDate() == birthday.get(key, `birthdayDay`)) {
+                //This is our announce channel! Yeah!
+                let announceChannel = guild.channels.find(ch => ch.id === roles.get(guild.id, `announceChannel`));
+
+                //This is sending the announcement! Happy birthday!
+                announceChannel.send(`It's <@!${key}>'s birthday! Wish them a happy birthday!`);
+            }
+        }
+    });
+});
+
 //runs every 24 hours
-client.setInterval(function(){
+client.setInterval(function () {
     //checks all guilds
     client.guilds.forEach((guild) => {
         //checks all members in the said guild
@@ -59,7 +86,7 @@ client.setInterval(function(){
             }
         });
     });
-}, 86400000);//run every 24 hours (86400000 ms)
+}, 86400000); //run every 24 hours (86400000 ms)
 
 //Create an Enmap for our currencies!!1!
 const currency = new Enmap({
@@ -118,7 +145,7 @@ fs.readdir(`./commands/`, (err, files) => {
 });
 
 client.on(`message`, message => {
-    
+
     //If in a DM, stop running the code. 
     if (message.channel.type == `dm`) return;
 
