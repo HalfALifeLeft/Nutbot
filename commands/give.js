@@ -71,20 +71,23 @@ module.exports.run = async (client, message, args) => {
     const keyPoints = message.guild.id;
     const userTwo = message.guild.members.find(u => u.id === user.id);
 
+    var levelUpMsg = `you have leveled up!`;
 
     switch (true) {
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points1`)):
 
+            if (client.roles.get(keyPoints, `message1`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message1`);
+            }
+
             //Under 50 Points
-            console.log(`I am under 50!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role1`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role1`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role1`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`Under 50`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
@@ -95,16 +98,18 @@ module.exports.run = async (client, message, args) => {
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points2`)):
 
+            if (client.roles.get(keyPoints, `message2`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message2`);
+            }
+
             //50 - 99 Points
-            console.log(`I am between 50 and 99!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role2`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role2`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role2`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`50-99`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
@@ -115,16 +120,18 @@ module.exports.run = async (client, message, args) => {
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points3`)):
 
+            if (client.roles.get(keyPoints, `message3`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message3`);
+            }
+
             //50 - 99 Points
-            console.log(`I am between 100 and 149!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role3`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role3`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role3`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`100-149`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
@@ -135,16 +142,18 @@ module.exports.run = async (client, message, args) => {
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points4`)):
 
+            if (client.roles.get(keyPoints, `message4`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message4`);
+            }
+
             //150 - 199 Points
-            console.log(`I am between 150 and 199!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role4`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role4`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role4`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`150-199`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
@@ -155,16 +164,18 @@ module.exports.run = async (client, message, args) => {
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points5`)):
 
+            if (client.roles.get(keyPoints, `message5`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message5`);
+            }
+
             //200 - 299 Points
-            console.log(`I am between 200 and 299!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role5`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role5`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role5`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`200-299`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
@@ -175,111 +186,114 @@ module.exports.run = async (client, message, args) => {
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points6`)):
 
+            if (client.roles.get(keyPoints, `message6`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message6`);
+            }
+
             //300 - ???1 points
-            console.log(`300-???1`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role6`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role6`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role6`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`300-???1`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
                 }
 
             }
-            
+
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points7`)):
 
-        //???1 - ???2
-            console.log(`???1 - ???2`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role7`))) {
+            if (client.roles.get(keyPoints, `message7`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message7`);
+            }
+
+            //???1 - ???2
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role7`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role7`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`???1 - ???2`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
                 }
 
             }
-            
+
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points8`)):
 
+            if (client.roles.get(keyPoints, `message8`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message8`);
+            }
+
             //???2 - ???3
-            console.log(`???2 - ???3`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role8`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role8`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role8`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`???2 - ???3`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
                 }
 
             }
-            
+
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points9`)):
 
+            if (client.roles.get(keyPoints, `message9`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message9`);
+            }
+
             //???3 - ???4
-            console.log(`???3 - ???4`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role9`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role9`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role9`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`???3 - ???4`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
                 }
 
             }
-            
+
             break;
         case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points10`)):
 
+            if (client.roles.get(keyPoints, `message10`) != ``) {
+                levelUpMsg = client.roles.get(keyPoints, `message10`);
+            }
+
             //???4+
-            console.log(`I am above 300 points!`);
-            if (!userTwo.roles.has(r => r.id === client.roles.get(keyPoints, `role10`))) {
+            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role10`))) {
                 let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role10`));
                 userTwo.addRole(role, `User leveled up!`);
 
                 if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    console.log(`I am inside the channel if!`);
                     let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`???4+`)
+                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
                         .catch(e => {
                             console.error(e);
                         });
                 }
 
             }
-            
+
             break;
-
-
-
-
-
-
-
     }
 };
 module.exports.help = {
