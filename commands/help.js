@@ -62,10 +62,6 @@ module.exports.run = async (client, message, args) => {
             .catch(e => {
                 console.error(e);
             });
-            message.author.send(embedTwo)
-            .catch(e => {
-                console.error(e);
-            });
             message.author.send(embedThree)
             .catch(e => {
                 console.error(e);
