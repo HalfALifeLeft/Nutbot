@@ -3,14 +3,16 @@ module.exports = (client, message) => {
     //Create the key for the Enmap
     const key = `${message.author.id}`;
 
-    //Ensure out Enmap exists
-    client.currency.ensure(key, {
-        user: message.author.id,
-        guild: message.guild.id,
-        points: 0,
-        level: 1,
-        lastSeen: new Date()
-    });
+    if (message.guild) {
+        //Ensure out Enmap exists
+        client.currency.ensure(key, {
+            user: message.author.id,
+            guild: message.guild.id,
+            points: 0,
+            level: 1,
+            lastSeen: new Date()
+        });
+    }
 
     // Ignore all bots and DM messages
     if (message.author.bot || !message.guild) return;
