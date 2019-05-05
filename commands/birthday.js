@@ -36,7 +36,13 @@ module.exports.run = async (client, message, args) => {
         client.birthday.set(key, `${message.author.id}`, `userID`);
 
     } else {
-        message.channel.send(`Your birthday is set to ${months[parseInt(client.birthday.get(key, `birthdayMonth`))]} ${parseInt(client.birthday.get(key, `birthdayDay`))}.`);
+
+        if (client.birthday.has(key)) {
+            message.channel.send(`Your birthday is set to ${months[parseInt(client.birthday.get(key, `birthdayMonth`))]} ${parseInt(client.birthday.get(key, `birthdayDay`))}.`);
+        } else {
+            message.channel.send(`You have yet to set a birthday!`);
+        }
+
     }
 };
 module.exports.help = {
