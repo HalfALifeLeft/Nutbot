@@ -11,3 +11,9 @@ Config:
 Set Up Glitch Hosting!
 
 add a way to detect if points decreased, if below threshold (50 - 100 - 150 - 200 - 300) then remove higher role
+
+FOR SETINTERVAL
+
+BYPASS FOR GLITCH ERROR
+
+run every minute to check if the time is 10:00 AM and if it isn't return. If it is, run the birthday checking
