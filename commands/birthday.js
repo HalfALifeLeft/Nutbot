@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
         birthdayTS: ``,
         birthdayMonth: ``,
         birthdayDay: ``,
-        currentYear: `2018`,
+        timestamp: Date.now(),
         userID: ``
     });
 
@@ -26,13 +26,16 @@ module.exports.run = async (client, message, args) => {
 
         //Creates array of birthday - 0 = mm -  1 = dd - 2 = yyyy
         var date = Date.UTC(separated[2], separated[0], separated[1]);
+        var kindaNow = new Date(Date.now());
+
+        var now = new Date(kindaNow.getFullYear(), kindaNow.getMonth(), kindaNow.getDate(), 12);
 
         message.channel.send(`Set ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]} as your birthday.`);
 
         client.birthday.set(key, `${date}`, `birthdayTS`);
         client.birthday.set(key, `${parseInt(separated[0])}`, `birthdayMonth`);
         client.birthday.set(key, `${separated[1]}`, `birthdayDay`);
-        //client.birthday.set(key, `${now.getFullYear()}`, `currentYear`);
+        client.birthday.set(key, now.getTime(), `timestamp`);
         client.birthday.set(key, `${message.author.id}`, `userID`);
 
     } else {
