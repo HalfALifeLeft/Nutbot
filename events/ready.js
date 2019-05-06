@@ -69,5 +69,5 @@ module.exports = (client) => {
             });
         });
         //}
-    }, 1000); //run every 24 hours (86400000 ms)
+    }, 60000); //run every 24 hours (86400000 ms)
 };
