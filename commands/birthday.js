@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     let months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]; //Just an array of the months
     let dateFormat1 = /\b(\d{2}\/\d{2}\/\d{4})\b/g; //regex to test for mm/dd/yyyy format
     let separated = [];
-
+  
     if (args[0]) {
 
         if (dateFormat1.test(args[0]) === false) {
@@ -25,20 +25,21 @@ module.exports.run = async (client, message, args) => {
         separated.push(parseInt(args[0].slice(6, 10)));
 
         //Creates array of birthday - 0 = mm -  1 = dd - 2 = yyyy
-        var date = Date.UTC(separated[2], separated[0], separated[1]);
-        var kindaNow = new Date(Date.now());
-
-        var now = new Date(kindaNow.getFullYear(), kindaNow.getMonth(), kindaNow.getDate(), 12);
+        var date = Date.UTC(separated[2], separated[0], separated[1], 19);
 
         message.channel.send(`Set ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]} as your birthday.`);
 
         client.birthday.set(key, `${date}`, `birthdayTS`);
         client.birthday.set(key, `${parseInt(separated[0])}`, `birthdayMonth`);
         client.birthday.set(key, `${separated[1]}`, `birthdayDay`);
-        client.birthday.set(key, now.getTime(), `timestamp`);
+        client.birthday.set(key, date, `timestamp`);
         client.birthday.set(key, `${message.author.id}`, `userID`);
 
+        console.log(client.birthday.get(key, `timestamp`));
+
     } else {
+
+        console.log(client.birthday.get(key, `timestamp`));
 
         if (client.birthday.has(key)) {
             message.channel.send(`Your birthday is set to ${months[parseInt(client.birthday.get(key, `birthdayMonth`))]} ${parseInt(client.birthday.get(key, `birthdayDay`))}.`);

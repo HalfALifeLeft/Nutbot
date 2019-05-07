@@ -9,10 +9,10 @@ module.exports = (client) => {
             //checks all members in the said guild
 
             if (!client.roles.has(guild.id)) {
-                // console.log(`Guild doesn't have any configurations`);
+                console.log(`Guild doesn't have any configurations`);
                 return;
             } else if (client.roles.get(guild.id, `announceChannel`) === ``) {
-                //console.log(`Guild doesn't have a birthday channel REEE!`);
+                console.log(`Guild doesn't have a birthday channel REEE!`);
                 return;
             }
             //Run a check to make sure guild has birthday channel, if not return
@@ -23,7 +23,7 @@ module.exports = (client) => {
 
                 //check if the member even has a birthday logged
                 if (!client.birthday.has(member.id)) {
-                    //console.log(`No Birthday :c`);
+                    console.log(`No Birthday :c`);
                     return;
                     //No need to waste CPU time!
                 }
@@ -47,24 +47,24 @@ module.exports = (client) => {
                         if (date.getDate() == client.birthday.get(key, `birthdayDay`)) {
                             //This is our announce channel! Yeah!
                             let announceChannel = guild.channels.find(ch => ch.id === client.roles.get(guild.id, `announceChannel`));
-
+  
                             //This is sending the announcement! Happy birthday!
                             announceChannel.send(`It's <@!${key}>'s birthday! Wish them a happy birthday!`);
                             //client.birthday.set(key, `${date.getFullYear()}`, `currentYear`);
                         }
                     } else {
-                        //console.log(`Already shouted out the birthday lmao`);
+                        console.log(`Already shouted out the birthday lmao`);
                     }
 
                     var oneYear = 31536000000;
 
-                    if (leapYear(date.getFullYear()) == true) {
+                    if (leapYear(date.getFullYear() + 1) == true) {
                         oneYear = 31622400000;
                     }
 
                     client.birthday.set(key, timestamp + oneYear, `timestamp`);
                 } else {
-                    //console.log(`Now is greater than set timestamp`);
+                    console.log(`Now is greater than set timestamp`);
                 }
             });
         });
