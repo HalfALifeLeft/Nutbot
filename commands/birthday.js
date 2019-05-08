@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
 
     } else {
 
-        if (client.birthday.has(key)) {
+        if (client.birthday.get(key, `birthdayMonth`) != `` && client.birthday.get(key, `birthdayDay`) != ``) {
             message.channel.send(`Your birthday is set to ${months[parseInt(client.birthday.get(key, `birthdayMonth`))]} ${parseInt(client.birthday.get(key, `birthdayDay`))}.`);
         } else {
             message.channel.send(`You have yet to set a birthday!`);

@@ -91,6 +91,7 @@ module.exports.run = async (client, message, args) => {
         } = require(`discord.js`);
         const embed = new RichEmbed()
             .setTitle(`Configurations Help`)
+            .setColor(process.env.HEXCODE)
             .addField(`Help`, `Possible items to configure are:\n\t1 through 10 - First through Tenth XP Roles\n\tAnnounce - The channel the bot uses to announce birthdays!\n\tGeneral - The channel the bot sends level up messages through!\n\tM1 through M10 - Level up messages (optional)`)
             .addField(`Command Examples`, `**Roles**\n\t!config [1 - 10] [Role ID] [XP Required]\n\t**Announce OR General**\n\t!config announce/general [#channel]\n\t**Channel Messages**\n\t!config [M1 - M10] [message]\n\t**Remove Configurations**\n\t!config [item to configure] remove to remove that item,\n\t!config removeall to remove ALL configs for the server.`);
         return message.channel.send(embed);
