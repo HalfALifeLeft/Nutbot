@@ -8,7 +8,7 @@
     "Birthday": {
         "name": "Birthday",
         "group": "Users",
-        "desc": "Set your birthday to get added to the birthday rotation!",
+        "desc": "WOOOO! BIRTHDAY! (Set/check if you have set your birthday)",
         "usage": "birthday [mm/dd/yyyy]"
     },
     "Config": {
