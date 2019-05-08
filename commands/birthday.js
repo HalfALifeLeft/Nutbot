@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         //Creates array of birthday - 0 = mm -  1 = dd - 2 = yyyy
         var date = Date.UTC(separated[2], separated[0], separated[1], 19);
 
-        message.channel.send(`Set ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]} as your birthday.`);
+        message.channel.send(`Your birthday was set to ${months[parseInt(separated[0])]} ${separated[1]}, ${separated[2]}!`);
 
         client.birthday.set(key, `${date}`, `birthdayTS`);
         client.birthday.set(key, `${parseInt(separated[0])}`, `birthdayMonth`);
@@ -35,11 +35,7 @@ module.exports.run = async (client, message, args) => {
         client.birthday.set(key, date, `timestamp`);
         client.birthday.set(key, `${message.author.id}`, `userID`);
 
-        console.log(client.birthday.get(key, `timestamp`));
-
     } else {
-
-        console.log(client.birthday.get(key, `timestamp`));
 
         if (client.birthday.has(key)) {
             message.channel.send(`Your birthday is set to ${months[parseInt(client.birthday.get(key, `birthdayMonth`))]} ${parseInt(client.birthday.get(key, `birthdayDay`))}.`);
