@@ -38,7 +38,7 @@
     "Reload": {
         "name": "Reload",
         "group": "Owner",
-        "desc": "Reload a command! Only necessary when making file changes to the bot!",
+        "desc": "Bot Owner Command. Don't use it pls.",
         "usage": "reload [command name]"
     },
     "Roles": {
