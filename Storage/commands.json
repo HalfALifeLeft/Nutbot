@@ -21,7 +21,7 @@
         "name": "Give",
         "group": "Admins",
         "desc": "Give someone points!",
-        "usage": "give <@user> <points>"
+        "usage": "give <@user OR User ID> <points>"
     },
     "Help": {
         "name": "Help",
