@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
         birthdayTS: null,
         birthdayMonth: null,
         birthdayDay: null,
-        timestamp: Date.now(),
+        timestamp: null,
         userID: null,
         currentYear: null
     });

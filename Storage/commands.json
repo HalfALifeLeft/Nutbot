@@ -9,7 +9,7 @@
         "name": "Birthday",
         "group": "Users",
         "desc": "WOOOO! BIRTHDAY! (Set/check if you have set your birthday)",
-        "usage": "birthday [mm/dd/yyyy]"
+        "usage": "birthday [mm/dd]"
     },
     "Config": {
         "name": "Config",

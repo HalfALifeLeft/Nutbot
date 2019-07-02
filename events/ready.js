@@ -67,6 +67,13 @@ module.exports = (client) => {
                 } else {
                     console.log(`Now is greater than set timestamp`);
                     console.log(client.birthday);
+                    var oneyear = 31536000000;
+
+                    if (leapYear(date.getFullYear() + 1) == true) {
+                        oneyear = 31622400000;
+                    }
+
+                    client.birthday.set(key, timestamp + oneyear, `timestamp`);
                 }
             });
         });
