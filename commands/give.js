@@ -50,248 +50,90 @@ module.exports.run = async (client, message, args) => {
 
     //ensure it exists
     client.roles.ensure(keyRoles, {
-        role1: ``,
-        role2: ``,
-        role3: ``,
-        role4: ``,
-        role5: ``,
-        role6: ``,
-        role7: ``,
-        role8: ``,
-        role9: ``,
-        role10: ``
+        role1: null,
+        role2: null,
+        role3: null,
+        role4: null,
+        role5: null,
+        role6: null,
+        role7: null,
+        role8: null,
+        role9: null,
+        role10: null
     });
 
     //Now that we know it exists we can work with it! So far we only need 6 roles so we set the first 6 points thingies
 
-    const pointsForAddingARoleAndICantComeUpWithABetterName = client.currency.get(keyUser, `points`);
+    const pointsForRole = client.currency.get(keyUser, `points`);
 
     //client.roles.get(key, `points${i}`)
 
     const keyPoints = message.guild.id;
-    const userTwo = message.guild.members.find(u => u.id === user.id);
+    //const userTwo = message.guild.members.find(u => u.id === user.id);
 
-    var levelUpMsg = `you have leveled up!`;
+    //var levelUpMsg = `you have leveled up!`;
 
-    switch (true) {
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points1`)):
+    console.log(pointsForRole);
 
-            if (client.roles.get(keyPoints, `message1`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message1`);
-            }
+    switch (false) {
+        case ((client.roles.get(keyPoints, `points1`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points1`)) == false):
 
-            //Under 50 Points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role1`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role1`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points1`));
+            console.log(`Tier 1`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points2`)):
+        case ((client.roles.get(keyPoints, `points2`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points2`)) == false):
 
-            if (client.roles.get(keyPoints, `message2`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message2`);
-            }
-
-            //50 - 99 Points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role2`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role2`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points2`));
+            console.log(`Tier 2`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points3`)):
+        case ((client.roles.get(keyPoints, `points3`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points3`)) == false):
 
-            if (client.roles.get(keyPoints, `message3`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message3`);
-            }
-
-            //50 - 99 Points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role3`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role3`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points3`));
+            console.log(`Tier 3`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points4`)):
+        case ((client.roles.get(keyPoints, `points4`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points4`)) == false):
 
-            if (client.roles.get(keyPoints, `message4`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message4`);
-            }
-
-            //150 - 199 Points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role4`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role4`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points4`));
+            console.log(`Tier 4`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points5`)):
+        case ((client.roles.get(keyPoints, `points5`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points5`)) == false):
 
-            if (client.roles.get(keyPoints, `message5`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message5`);
-            }
-
-            //200 - 299 Points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role5`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role5`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points5`));
+            console.log(`Tier 5`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points6`)):
+        case ((client.roles.get(keyPoints, `points6`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points6`)) == false):
 
-            if (client.roles.get(keyPoints, `message6`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message6`);
-            }
-
-            //300 - ???1 points
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role6`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role6`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points6`));
+            console.log(`Tier 6`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points7`)):
+        case ((client.roles.get(keyPoints, `points7`) >= pointsForRole) && (isNaN(client.roles.get(keyPoints, `points7`)) == false) && (client.roles.get(keyPoints, `points7`) != null)):
 
-            if (client.roles.get(keyPoints, `message7`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message7`);
-            }
-
-            //???1 - ???2
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role7`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role7`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(isNaN(client.roles.get(keyPoints, `points7`)));
+            console.log(`Tier 7`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points8`)):
+        case ((client.roles.get(keyPoints, `points8`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points8`)) == false):
 
-            if (client.roles.get(keyPoints, `message8`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message8`);
-            }
-
-            //???2 - ???3
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role8`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role8`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points8`));
+            console.log(`Tier 8`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points9`)):
+        case ((client.roles.get(keyPoints, `points9`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points9`)) == false):
 
-            if (client.roles.get(keyPoints, `message9`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message9`);
-            }
-
-            //???3 - ???4
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role9`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role9`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points9`));
+            console.log(`Tier 9`);
 
             break;
-        case (pointsForAddingARoleAndICantComeUpWithABetterName < client.roles.get(keyPoints, `points10`)):
+        case ((client.roles.get(keyPoints, `points10`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points10`)) == false):
 
-            if (client.roles.get(keyPoints, `message10`) != ``) {
-                levelUpMsg = client.roles.get(keyPoints, `message10`);
-            }
-
-            //???4+
-            if (!userTwo.roles.some(r => r.id === client.roles.get(keyPoints, `role10`))) {
-                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role10`));
-                userTwo.addRole(role, `User leveled up!`);
-
-                if (message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`))) {
-                    let mychannel = message.guild.channels.find(ch => ch.id === client.roles.get(keyPoints, `generalChannel`));
-                    mychannel.send(`<@!${userTwo.id}>, ${levelUpMsg}`)
-                        .catch(e => {
-                            console.error(e);
-                        });
-                }
-
-            }
+            console.log(client.roles.get(keyPoints, `points10`));
+            console.log(`Tier 10`);
 
             break;
     }
