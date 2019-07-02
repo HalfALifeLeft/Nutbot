@@ -11,7 +11,7 @@ module.exports = (client) => {
             if (!client.roles.has(guild.id)) {
                 console.log(`Guild doesn't have any configurations`);
                 return;
-            } else if (client.roles.get(guild.id, `announceChannel`) === ``) {
+            } else if (client.roles.get(guild.id, `announceChannel`) === null) {
                 console.log(`Guild doesn't have a birthday channel REEE!`);
                 return;
             }
@@ -50,7 +50,8 @@ module.exports = (client) => {
   
                             //This is sending the announcement! Happy birthday!
                             announceChannel.send(`It's <@!${key}>'s birthday! Wish them a happy birthday!`);
-                            //client.birthday.set(key, `${date.getFullYear()}`, `currentYear`);
+                            client.birthday.set(key, `${date.getFullYear()}`, `currentYear`);
+                            console.log(client.birthday);
                         }
                     } else {
                         console.log(`Already shouted out the birthday lmao`);
@@ -65,6 +66,7 @@ module.exports = (client) => {
                     client.birthday.set(key, timestamp + oneYear, `timestamp`);
                 } else {
                     console.log(`Now is greater than set timestamp`);
+                    console.log(client.birthday);
                 }
             });
         });

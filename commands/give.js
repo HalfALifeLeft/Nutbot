@@ -48,7 +48,7 @@ module.exports.run = async (client, message, args) => {
     //declare a special key!
     const keyRoles = `${message.guild.id}`;
 
-    //ensure it exists
+    //Lets make sure everything exists!
     client.roles.ensure(keyRoles, {
         role1: null,
         role2: null,
@@ -59,7 +59,29 @@ module.exports.run = async (client, message, args) => {
         role7: null,
         role8: null,
         role9: null,
-        role10: null
+        role10: null,
+        points1: null,
+        points2: null,
+        points3: null,
+        points4: null,
+        points5: null,
+        points6: null,
+        points7: null,
+        points8: null,
+        points9: null,
+        points10: null,
+        message1: null,
+        message2: null,
+        message3: null,
+        message4: null,
+        message5: null,
+        message6: null,
+        message7: null,
+        message8: null,
+        message9: null,
+        message10: null,
+        announceChannel: null,
+        generalChannel: null
     });
 
     //Now that we know it exists we can work with it! So far we only need 6 roles so we set the first 6 points thingies
@@ -69,73 +91,138 @@ module.exports.run = async (client, message, args) => {
     //client.roles.get(key, `points${i}`)
 
     const keyPoints = message.guild.id;
-    //const userTwo = message.guild.members.find(u => u.id === user.id);
+    const userTwo = message.guild.members.find(u => u.id === user.id);
 
     //var levelUpMsg = `you have leveled up!`;
 
-    console.log(pointsForRole);
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points1`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role1`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points1`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points1`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points1`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role1`));
 
-    switch (false) {
-        case ((client.roles.get(keyPoints, `points1`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points1`)) == false):
+                console.log(`Tier 1`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            console.log(client.roles.get(keyPoints, `points1`));
-            console.log(`Tier 1`);
+        }
+    }
 
-            break;
-        case ((client.roles.get(keyPoints, `points2`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points2`)) == false):
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points2`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role2`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points2`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points2`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points1`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role2`));
 
-            console.log(client.roles.get(keyPoints, `points2`));
-            console.log(`Tier 2`);
+                console.log(`Tier 2`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            break;
-        case ((client.roles.get(keyPoints, `points3`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points3`)) == false):
+        }
+    }
 
-            console.log(client.roles.get(keyPoints, `points3`));
-            console.log(`Tier 3`);
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points3`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role3`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points3`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points3`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points3`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role3`));
 
-            break;
-        case ((client.roles.get(keyPoints, `points4`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points4`)) == false):
+                console.log(`Tier 3`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            console.log(client.roles.get(keyPoints, `points4`));
-            console.log(`Tier 4`);
+        }
+    }
 
-            break;
-        case ((client.roles.get(keyPoints, `points5`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points5`)) == false):
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points4`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role4`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points4`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points4`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points4`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role4`));
 
-            console.log(client.roles.get(keyPoints, `points5`));
-            console.log(`Tier 5`);
+                console.log(`Tier 4`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            break;
-        case ((client.roles.get(keyPoints, `points6`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points6`)) == false):
+        }
+    }
 
-            console.log(client.roles.get(keyPoints, `points6`));
-            console.log(`Tier 6`);
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points5`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role5`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points5`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points5`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points5`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role5`));
 
-            break;
-        case ((client.roles.get(keyPoints, `points7`) >= pointsForRole) && (isNaN(client.roles.get(keyPoints, `points7`)) == false) && (client.roles.get(keyPoints, `points7`) != null)):
+                console.log(`Tier 5`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            console.log(isNaN(client.roles.get(keyPoints, `points7`)));
-            console.log(`Tier 7`);
+        }
+    }
 
-            break;
-        case ((client.roles.get(keyPoints, `points8`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points8`)) == false):
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points6`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role6`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points6`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points6`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points6`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role6`));
 
-            console.log(client.roles.get(keyPoints, `points8`));
-            console.log(`Tier 8`);
+                console.log(`Tier 6`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            break;
-        case ((client.roles.get(keyPoints, `points9`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points9`)) == false):
+        }
+    }
 
-            console.log(client.roles.get(keyPoints, `points9`));
-            console.log(`Tier 9`);
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points7`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role7`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points7`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points7`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points7`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role7`));
 
-            break;
-        case ((client.roles.get(keyPoints, `points10`) >= pointsForRole) && isNaN(client.roles.get(keyPoints, `points10`)) == false):
+                console.log(`Tier 7`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
 
-            console.log(client.roles.get(keyPoints, `points10`));
-            console.log(`Tier 10`);
+        }
+    }
 
-            break;
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points8`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role8`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points8`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points8`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points8`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role8`));
+
+                console.log(`Tier 8`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
+
+        }
+    }
+
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points9`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role9`))) {
+        if ((parseInt(client.roles.get(keyPoints, `points9`)) <= parseInt(pointsForRole))) {
+            console.log(`${client.roles.get(keyPoints, `points9`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points9`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role9`));
+
+                console.log(`Tier 9`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
+
+        }
+    }
+
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points10`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role10`))) {
+        if (parseInt(client.roles.get(keyPoints, `points10`)) <= parseInt(pointsForRole)) {
+            console.log(`${client.roles.get(keyPoints, `points10`)} - ${pointsForRole}`);
+            if (client.roles.get(keyPoints, `points10`) != null) {
+                let role = message.guild.roles.find(r => r.id === client.roles.get(keyPoints, `role10`));
+
+                console.log(`Tier 10`);
+                userTwo.addRole(role, `User leveled up!`);
+            }
+
+        }
     }
 };
 module.exports.help = {

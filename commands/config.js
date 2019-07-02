@@ -7,38 +7,38 @@ module.exports.run = async (client, message, args) => {
 
     //Lets make sure everything exists!
     client.roles.ensure(key, {
-        role1: ``,
-        role2: ``,
-        role3: ``,
-        role4: ``,
-        role5: ``,
-        role6: ``,
-        role7: ``,
-        role8: ``,
-        role9: ``,
-        role10: ``,
-        points1: ``,
-        points2: ``,
-        points3: ``,
-        points4: ``,
-        points5: ``,
-        points6: ``,
-        points7: ``,
-        points8: ``,
-        points9: ``,
-        points10: ``,
-        message1: ``,
-        message2: ``,
-        message3: ``,
-        message4: ``,
-        message5: ``,
-        message6: ``,
-        message7: ``,
-        message8: ``,
-        message9: ``,
-        message10: ``,
-        announceChannel: ``,
-        generalChannel: ``
+        role1: null,
+        role2: null,
+        role3: null,
+        role4: null,
+        role5: null,
+        role6: null,
+        role7: null,
+        role8: null,
+        role9: null,
+        role10: null,
+        points1: null,
+        points2: null,
+        points3: null,
+        points4: null,
+        points5: null,
+        points6: null,
+        points7: null,
+        points8: null,
+        points9: null,
+        points10: null,
+        message1: null,
+        message2: null,
+        message3: null,
+        message4: null,
+        message5: null,
+        message6: null,
+        message7: null,
+        message8: null,
+        message9: null,
+        message10: null,
+        announceChannel: null,
+        generalChannel: null
     });
 
     //Now that we made sure it exists, lets do a little something something with configurations!
@@ -60,19 +60,19 @@ module.exports.run = async (client, message, args) => {
             .setColor(process.env.HEXCODE)
             .setDescription(`If nothing is here, run \`!config help\`!`);
 
-        if (client.roles.get(key, `announceChannel`) !== ``) {
+        if (client.roles.get(key, `announceChannel`) != null) {
             embed.addField(`announceChannel`, `<#${client.roles.get(key, `announceChannel`)}>`);
         }
 
-        if (client.roles.get(key, `generalChannel`) !== ``) {
+        if (client.roles.get(key, `generalChannel`) != null) {
             embed.addField(`generalChannel`, `<#${client.roles.get(key, `generalChannel`)}>`);
         }
 
         for (var i = 1; i <= 10; i++) {
-            if (client.roles.get(key, `role${i}`) !== ``) {
+            if (client.roles.get(key, `role${i}`) != null) {
                 embed.addField(`role${i}`, `<@&${client.roles.get(key, `role${i}`)}> - ${client.roles.get(key, `points${i}`)} Points`);
             }
-            if (client.roles.get(key, `message${i}`) !== ``) {
+            if (client.roles.get(key, `message${i}`) != null) {
                 embed.addField(`message${i}`, `"${client.roles.get(key, `message${i}`)}"`);
             }
         }
