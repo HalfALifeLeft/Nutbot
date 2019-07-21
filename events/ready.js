@@ -79,3 +79,16 @@ module.exports = (client) => {
         });
     }, 60000);
 };
+
+/*
+
+#LOGIN TOKEN
+TOKEN=
+#PREFIX
+PREFIX=!
+#HEXCODE
+HEXCODE=0x800080
+#OWNER USER ID
+OWNERID=164819920251650050
+
+*/

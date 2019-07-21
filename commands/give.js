@@ -95,7 +95,11 @@ module.exports.run = async (client, message, args) => {
 
     //var levelUpMsg = `you have leveled up!`;
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points1`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role1`))) {
+    //console.log(userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role1`)) != null);
+    //console.log(client.roles.get(keyPoints, `role1`));
+    //console.log(userTwo);
+    
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points1`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role1`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points1`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points1`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points1`) != null) {
@@ -108,7 +112,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points2`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role2`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points2`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role2`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points2`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points2`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points1`) != null) {
@@ -121,7 +125,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points3`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role3`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points3`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role3`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points3`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points3`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points3`) != null) {
@@ -134,7 +138,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points4`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role4`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points4`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role4`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points4`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points4`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points4`) != null) {
@@ -147,7 +151,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points5`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role5`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points5`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role5`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points5`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points5`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points5`) != null) {
@@ -160,7 +164,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points6`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role6`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points6`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role6`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points6`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points6`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points6`) != null) {
@@ -173,7 +177,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points7`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role7`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points7`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role7`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points7`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points7`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points7`) != null) {
@@ -186,7 +190,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points8`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role8`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points8`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role8`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points8`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points8`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points8`) != null) {
@@ -199,7 +203,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points9`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role9`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points9`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role9`)) == null) {
         if ((parseInt(client.roles.get(keyPoints, `points9`)) <= parseInt(pointsForRole))) {
             console.log(`${client.roles.get(keyPoints, `points9`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points9`) != null) {
@@ -212,7 +216,7 @@ module.exports.run = async (client, message, args) => {
         }
     }
 
-    if (isNaN(parseInt(client.roles.get(keyPoints, `points10`) == false)) && !userTwo.roles.has(r => r.d === client.roles.get(keyPoints, `role10`))) {
+    if (isNaN(parseInt(client.roles.get(keyPoints, `points10`) == false)) && userTwo.roles.find(r => r.id === client.roles.get(keyPoints, `role10`)) == null) {
         if (parseInt(client.roles.get(keyPoints, `points10`)) <= parseInt(pointsForRole)) {
             console.log(`${client.roles.get(keyPoints, `points10`)} - ${pointsForRole}`);
             if (client.roles.get(keyPoints, `points10`) != null) {

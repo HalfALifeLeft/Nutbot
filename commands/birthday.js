@@ -22,7 +22,6 @@ module.exports.run = async (client, message, args) => {
         }
 
         var now = new Date(Date.now());
-        console.log(now);
 
         separated.push(parseInt(args[0].slice(0, 2)) - 1);
         separated.push(parseInt(args[0].slice(3, 5)));
@@ -32,6 +31,8 @@ module.exports.run = async (client, message, args) => {
 
         //Creates array of birthday - 0 = mm -  1 = dd - 2 = yyyy
         var date = Date.UTC(separated[2], separated[0], separated[1], 19);
+
+        console.log(date);
 
         message.channel.send(`Your birthday was set to ${months[parseInt(separated[0])]} ${separated[1]}!`);
 
