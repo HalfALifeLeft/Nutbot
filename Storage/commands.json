@@ -14,13 +14,13 @@
     "Config": {
         "name": "Config",
         "group": "Admins",
-        "desc": "Configure the server! `!config help` for more info!",
+        "desc": "Configure the server! `!config help` for more info! NEEDS ADMIN PERMISSIONS",
         "usage": "config [what to configure] [what to set it to]"
     },
     "Give": {
         "name": "Give",
         "group": "Admins",
-        "desc": "Give someone points!",
+        "desc": "Give someone points! NEEDS ADMIN PERMISSIONS",
         "usage": "give <@user OR User ID> <points>"
     },
     "Help": {

@@ -2,6 +2,10 @@
 // eslint-disable-next-line no-unused-vars
 module.exports.run = async (client, message, args) => {
 
+    if (!message.member.hasPermission(`ADMINISTRATOR`)) {
+        return message.reply(`Permissions error: \`ERR_ADMIN_NEEDED\``);
+    }
+
     //Lets declare our key!
     const key = `${message.guild.id}`;
 
@@ -145,10 +149,6 @@ module.exports.run = async (client, message, args) => {
     }
 
     if ((1 < parseInt(roleNum) < 10) && isNaN(parseInt(roleNum)) === false) {
-        //If we are missing a number to configure lets say as much!
-        /*if (!roleNum || roleNum > 10 || roleNum < 1) {
-            return message.channel.send(`\`ERR_INVALID_NUM\``);
-        }*/
 
         //Lets test to make sure that they didn't ping the role! That would be bad!
         if (regexTest.test(roleID)) {
@@ -165,9 +165,9 @@ module.exports.run = async (client, message, args) => {
             return message.channel.send(`Role ${roleNum} was removed.`);
 
         } else if (!roleID || !message.guild.roles.has(roleID)) { //If we are missing a role ID or if its invalid lets say as much!
-            return message.channel.send(`\`ERR_INVALID_ID\``);
+            return message.channel.send(`Configurations Error: \`ERR_INVALID_ID\``);
         } else if (isNaN(parseInt(points)) === true) { //Check if points are a number
-            return message.channel.send(`\`ERR_INVALID_POINTS\``);
+            return message.channel.send(`Configurations Error: \`ERR_INVALID_POINTS\``);
         }
 
         //Well, now that we are this far, we can safely assume that we have everything! Hurray!

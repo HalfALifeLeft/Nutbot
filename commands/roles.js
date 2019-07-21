@@ -1,4 +1,9 @@
-module.exports.run = async (client, message, args) => {
+/* eslint-disable no-console */
+module.exports.run = async (client, message) => {
+
+    if (!message.member.hasPermission(`ADMINISTRATOR`)) {
+        return message.reply(`Permissions error: \`ERR_NO_PERMISSION\``);
+    }
 
     let allRoles = [];
 
@@ -32,7 +37,7 @@ module.exports.run = async (client, message, args) => {
                 reaction.emoji.name === `➡`, {
                     time: 300000
                 }
-            )
+            );
 
             collector.on(`collect`, reaction => {
                 const react = reaction.emoji.name;

@@ -2,6 +2,10 @@
 /* eslint-disable no-empty */
 module.exports.run = async (client, message, args) => {
 
+    if (!message.member.hasPermission(`ADMINISTRATOR`)) {
+        return message.reply(`Permissions error: \`ERR_NO_PERMISSION\``);
+    }
+
     let keyUser = `I'm irrelevant!`;
 
     if (message.mentions.members.size === 0) {
@@ -25,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     //Now that we know the enmap exists, we can totally add poin- wait, who do we add them to?
     const user = message.mentions.users.first() || client.users.get(args[0]);
     if (!user) {
-        return message.reply(`\`ERR_NO_USER_TEST\``);
+        return message.reply(`Points Error: \`ERR_NO_USER_TEST\``);
     }
 
     //Okay, we know who our user is, right? RIGHT???? Yes we do! So what do we do now? OH RIGHT! how many points to add?
@@ -33,7 +37,7 @@ module.exports.run = async (client, message, args) => {
 
     //lets check if the points even exist and are a number
     if (!points || isNaN(points) === true) {
-        return message.reply(`\`ERR_INVALID_POINTS\``);
+        return message.reply(`Points Error: \`ERR_INVALID_POINTS\``);
     }
 
     //Woah! We can add points now???? YES! FINALLY!
